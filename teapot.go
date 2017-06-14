@@ -9,7 +9,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
-var pot = `
+const pot = `
                        (
             _           ) )
          _,(_)._        ((
@@ -27,7 +27,7 @@ func main() {
 	log.Println("Teapot booting..")
 	router := mux.NewRouter().StrictSlash(false)
 	router.PathPrefix("/").HandlerFunc(serve)
-	log.Fatal(http.ListenAndServe("localhost:4000", router))
+	log.Fatal(http.ListenAndServe(":4000", router))
 }
 
 func serve(w http.ResponseWriter, r *http.Request) {
