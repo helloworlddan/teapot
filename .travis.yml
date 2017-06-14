@@ -3,6 +3,10 @@ install:
 - go get github.com/gorilla/mux
 go:
 - master
+
+script:
+  - go build teapot.go
+
 deploy:
   provider: releases
   api_key:
