@@ -5,7 +5,7 @@ go:
 - master
 
 script:
-  - go build teapot.go
+  - go build
 
 deploy:
   provider: releases
