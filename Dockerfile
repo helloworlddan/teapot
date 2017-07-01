@@ -1,4 +1,4 @@
-FROM zenika/alpine-golang
+FROM scratch
 EXPOSE 4000
-COPY teapot /teapot
-CMD ["/teapot"]
+COPY ./teapot /teapot
+ENTRYPOINT ["/teapot"]

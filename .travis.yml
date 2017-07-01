@@ -5,7 +5,7 @@ go:
 - master
 
 script:
-  - go build
+  - go build -tags netgo teapot.go
 
 deploy:
   provider: releases
