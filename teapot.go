@@ -5,8 +5,6 @@ import (
 	"net/http"
 
 	"io"
-
-	"github.com/gorilla/mux"
 )
 
 const pot = `
@@ -25,12 +23,11 @@ const pot = `
 
 func main() {
 	log.Println("Teapot booting..")
-	router := mux.NewRouter().StrictSlash(false)
-	router.PathPrefix("/").HandlerFunc(serve)
-	log.Fatal(http.ListenAndServe(":4000", router))
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 
-func serve(w http.ResponseWriter, r *http.Request) {
+func handler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
 	w.WriteHeader(http.StatusTeapot)
 	io.WriteString(w, pot)
