@@ -24,7 +24,7 @@ const pot = `
 func main() {
 	log.Println("Teapot booting..")
 	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":80", nil))
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
