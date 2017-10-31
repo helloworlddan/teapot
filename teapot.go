@@ -1,10 +1,9 @@
 package main
 
 import (
+	"io"
 	"log"
 	"net/http"
-
-	"io"
 )
 
 const pot = `
@@ -24,7 +23,7 @@ const pot = `
 func main() {
 	log.Println("Teapot booting..")
 	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {

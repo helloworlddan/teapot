@@ -1,4 +1,4 @@
 FROM scratch
-EXPOSE 4000
-COPY ./teapot /teapot
+EXPOSE 80
+COPY ./teapot /teapot 
 ENTRYPOINT ["/teapot"]
