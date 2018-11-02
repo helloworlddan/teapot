@@ -41,9 +41,3 @@ steps:
         COPY --from=builder /go/src/github.com/$GH_USER/$GH_REPO/dist/teapot /usr/bin/teapot
 
         ENTRYPOINT ["/usr/bin/teapot"]
-  PushingToDockerRegistry:
-    title: imagepusher
-    type: push
-    candidate: '${{BuildingDockerImage}}'
-    tag: '${{CF_BRANCH_TAG_NORMALIZED}}'
-    registry: cfcr
