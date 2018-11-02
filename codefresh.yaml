@@ -24,7 +24,7 @@ steps:
         COPY . .
 
         # Build application
-        RUN CGO_ENABLED=0 go build -tags netgo -v -o "dist/teapot"
+        RUN CGO_ENABLED=0 go build -tags netgo -v -o "dist/teapot" teapot.go
 
         # ---
         # Application Runtime Image
